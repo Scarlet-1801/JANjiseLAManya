@@ -154,6 +154,46 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--black);font-fa
 .copy-btn:active,.copy-btn:hover{background:var(--gold);color:var(--black)}
 .copy-toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:10px 24px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999}
 .copy-toast.show{opacity:1}
+
+/* ── S8 Ucapan ── */
+#s8{background:linear-gradient(160deg,#0a0a0a 0%,#1a0015 100%);justify-content:flex-start;padding-top:48px}
+.wish-form{width:100%;margin-bottom:16px;display:flex;flex-direction:column;gap:8px}
+.wish-form input,.wish-form textarea{
+  width:100%;background:rgba(255,248,231,.05);border:1px solid rgba(201,162,39,.25);
+  color:var(--cream);font-family:'EB Garamond',serif;font-size:14px;padding:11px 14px;outline:none;
+  transition:border-color .3s;
+}
+.wish-form input:focus,.wish-form textarea:focus{border-color:var(--gold)}
+.wish-form input::placeholder,.wish-form textarea::placeholder{color:rgba(255,248,231,.3)}
+.wish-form textarea{resize:none;min-height:64px;font-family:'EB Garamond',serif}
+.submit-wish-btn{
+  background:linear-gradient(135deg,var(--crimson),var(--plum));
+  border:1px solid var(--gold);color:var(--gold);
+  font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  padding:12px;cursor:pointer;transition:all .3s;
+}
+.submit-wish-btn:active,.submit-wish-btn:hover{background:var(--gold);color:var(--black)}
+.wish-list{
+  width:100%;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px;
+  padding-right:2px;
+}
+.wish-list::-webkit-scrollbar{width:3px}
+.wish-list::-webkit-scrollbar-thumb{background:rgba(201,162,39,.3)}
+.wish-empty{
+  text-align:center;font-size:12px;color:rgba(255,248,231,.3);
+  font-style:italic;margin-top:20px;
+}
+.wish-item{
+  background:rgba(61,0,53,.25);border:1px solid rgba(201,162,39,.12);
+  border-left:2px solid var(--gold);padding:10px 14px;
+}
+.wish-name{
+  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;
+  color:var(--gold);margin-bottom:3px;
+}
+.wish-text{font-size:12px;line-height:1.6;color:rgba(255,248,231,.7)}
+.wish-time{font-size:9px;color:rgba(255,248,231,.25);margin-top:5px;letter-spacing:.5px}
+
 </style>
 </head>
 
@@ -173,6 +213,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--black);font-fa
   <div class="dot" onclick="goTo(4)"></div>
   <div class="dot" onclick="goTo(5)"></div>
   <div class="dot" onclick="goTo(6)"></div>
+  <div class="dot" onclick="goTo(7)"></div>
 </div>
 <div id="petals"></div>
 
@@ -419,12 +460,28 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--black);font-fa
 </div>
 <div class="copy-toast" id="toast">Tersalin ✓</div>
 
+<!-- S8: UCAPAN -->
+<div class="slide" id="s8">
+  <p class="section-tag">Ucapan &amp; Doa</p>
+  <h2 class="section-title" style="font-size:19px;margin-bottom:14px">Kirimkan <em>Doa Terbaik</em> Anda</h2>
+
+  <div class="wish-form">
+    <input type="text" id="wishName" placeholder="Nama Anda" maxlength="40">
+    <textarea id="wishMessage" placeholder="Tuliskan ucapan dan doa untuk mempelai..." maxlength="300"></textarea>
+    <button class="submit-wish-btn" onclick="submitWish()">Kirim Ucapan</button>
+  </div>
+
+  <div class="wish-list" id="wishList">
+    <p class="wish-empty" id="wishEmpty">Jadilah yang pertama mengirimkan ucapan 💌</p>
+  </div>
+</div>
+    
 </div><!-- /track -->
 </div><!-- /slider -->
 
 <script>
 let current=0,locked=false;
-const total=7,track=document.getElementById('track'),dots=document.querySelectorAll('.dot');
+const total=8,track=document.getElementById('track'),dots=document.querySelectorAll('.dot');
 let startY=0,startX=0;
 
 let opened=false;
@@ -578,8 +635,84 @@ function toggleVideo(overlay) {
   }
 }
 
+// ── Ucapan / Wishes (via Google Sheets Apps Script) ──
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwxw0lfdAMkv_xJL9pAiTW-W-k5M_78ef2DeCdpyAqAFqxFIklRFy2kCgqd0EIX17cllg/exec';
+
+async function loadWishes() {
+  try {
+    const res = await fetch(SCRIPT_URL);
+    const data = await res.json();
+    renderWishes(data.success ? data.wishes : []);
+  } catch (e) {
+    renderWishes([]);
+  }
+}
+
+function renderWishes(wishes) {
+  const list = document.getElementById('wishList');
+  if (!wishes || wishes.length === 0) {
+    list.innerHTML = '<p class="wish-empty" id="wishEmpty">Jadilah yang pertama mengirimkan ucapan 💌</p>';
+    return;
+  }
+  list.innerHTML = wishes.map(w => {
+    const safeName = escapeHtml(w.name);
+    const safeMsg = escapeHtml(w.message);
+    return '<div class="wish-item">' +
+      '<p class="wish-name">' + safeName + '</p>' +
+      '<p class="wish-text">' + safeMsg + '</p>' +
+      '<p class="wish-time">' + w.time + '</p>' +
+      '</div>';
+  }).join('');
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+async function submitWish() {
+  const nameInput = document.getElementById('wishName');
+  const msgInput = document.getElementById('wishMessage');
+  const name = nameInput.value.trim();
+  const message = msgInput.value.trim();
+
+  if (!name || !message) {
+    alert('Mohon isi nama dan ucapan terlebih dahulu.');
+    return;
+  }
+
+  const btn = document.querySelector('.submit-wish-btn');
+  btn.disabled = true;
+  btn.textContent = 'Mengirim...';
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ name: name, message: message })
+    });
+
+    nameInput.value = '';
+    msgInput.value = '';
+
+    const toast = document.getElementById('toast');
+    toast.textContent = 'Ucapan terkirim ✓';
+    toast.classList.add('show');
+    setTimeout(() => { toast.classList.remove('show'); toast.textContent = 'Tersalin ✓'; }, 2000);
+
+    await loadWishes();
+  } catch (e) {
+    alert('Gagal mengirim ucapan. Silakan coba lagi.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Kirim Ucapan';
+  }
+}    
+    
 // Reshuffle each time user swipes to gallery section
 goTo(0);
+loadWishes();
 shuffleGallery();
 
 </script>
