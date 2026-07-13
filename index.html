@@ -6,193 +6,840 @@
 <title>Hari Istimewa Kami 💕 — Januar & Chomia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-:root{--crimson:#8B0028;--gold:#C9A227;--black:#0A0A0A;--cream:#FFF8E7;--plum:#3D0035}
-html,body{width:100%;height:100%;overflow:hidden;background:var(--black);font-family:'Cormorant Garamond',serif;color:var(--cream)}
-
-/* slider */
-#slider{width:100%;height:100%;overflow:hidden;position:relative}
-#track{display:flex;flex-direction:column;height:100%;transition:transform 0.65s cubic-bezier(0.77,0,0.175,1);will-change:transform}
-
-/* slides */
-.slide{width:100vw;height:100vh;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:28px 24px}
-
-/* dots */
-#dots{position:fixed;right:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:100}
-.dot{width:6px;height:6px;border-radius:50%;background:rgba(201,162,39,0.25);border:1px solid rgba(201,162,39,0.5);cursor:pointer;transition:all 0.35s}
-.dot.active{background:var(--gold);height:18px;border-radius:3px}
-
-/* petals */
-.petal{position:fixed;width:7px;height:7px;pointer-events:none;z-index:1;opacity:0;animation:petalFall linear infinite}
-@keyframes petalFall{0%{transform:translateY(-20px) rotate(0deg);opacity:.7}100%{transform:translateY(105vh) rotate(400deg);opacity:0}}
-
-/* ── S1 ── */
-#s1{background:linear-gradient(160deg,#1a0015 0%,var(--plum) 50%,#1a0010 100%)}
-#s1::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(139,0,40,.25) 0%,transparent 65%)}
-.env-icon{width:80px;height:58px;margin-bottom:28px;animation:floatY 2.5s ease-in-out infinite;position:relative;z-index:2}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.env-title{font-family:'Pinyon Script',cursive;font-size:26px;color:var(--cream);opacity:.75;margin-bottom:36px;position:relative;z-index:2;text-align:center;line-height:1.4}
-.open-btn{position:relative;z-index:2;background:transparent;border:1.5px solid var(--gold);color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;padding:15px 48px;cursor:pointer;overflow:hidden;transition:color .35s}
-.open-btn::after{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-101%);transition:transform .35s ease;z-index:-1}
-.open-btn:active::after,.open-btn:hover::after{transform:translateX(0)}
-.open-btn:active,.open-btn:hover{color:var(--black)}
-.rose-corner{position:absolute;pointer-events:none;opacity:.15}
-
-/* ── S2 ── */
-#s2{background:var(--black);text-align:center}
-#s2::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(61,0,53,.5) 0%,transparent 70%)}
-.hero-floral{position:absolute;width:100%;pointer-events:none;opacity:.18}
-.hero-floral.top{top:0}
-.hero-floral.bot{bottom:0;transform:scaleY(-1)}
-.bismillah{font-family:'EB Garamond',serif;font-size:14px;letter-spacing:2px;color:var(--gold);margin-bottom:5px;position:relative;z-index:2}
-.inv-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:rgba(255,248,231,.4);margin-bottom:14px;position:relative;z-index:2}
-.gold-bar{width:1px;height:36px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);margin:0 auto 14px}
-.hero-groom,.hero-bride{font-family:'Pinyon Script',cursive;font-size:clamp(50px,12vw,72px);line-height:1.05;display:block;color:var(--cream);position:relative;z-index:2;text-shadow:0 0 40px rgba(201,162,39,.25)}
-.hero-amp{font-family:'Pinyon Script',cursive;font-size:clamp(28px,7vw,40px);color:var(--gold);display:block;line-height:1.2;position:relative;z-index:2}
-.hero-divider{display:flex;align-items:center;gap:12px;justify-content:center;margin:12px 0}
-.hero-divider span{width:36px;height:1px;background:rgba(201,162,39,.4)}
-.hero-date{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);position:relative;z-index:2}
-.swipe-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
-.swipe-hint span{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
-
-/* ── S3 ── */
-#s3{background:linear-gradient(160deg,#0a0a0a 0%,#1a0015 100%)}
-.quote-wrap{background:linear-gradient(135deg,rgba(61,0,53,.7),rgba(139,0,40,.25));border:1px solid rgba(201,162,39,.2);padding:32px 24px;text-align:center;position:relative;overflow:hidden;width:100%}
-.quote-wrap::before{content:'❝';position:absolute;top:6px;left:14px;font-size:56px;color:var(--gold);opacity:.1;font-family:Georgia,serif;line-height:1}
-.q-arabic{font-family:'EB Garamond',serif;font-size:17px;line-height:2.1;color:var(--gold);direction:rtl;margin-bottom:18px}
-.q-trans{font-family:'EB Garamond',serif;font-size:13px;font-style:italic;line-height:1.85;color:rgba(255,248,231,.65)}
-.q-src{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:14px}
-
-/* ── S4 ── */
-#s4{background:var(--black)}
-#s4::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(61,0,53,.4) 0%,transparent 70%)}
-.section-tag{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:6px;text-align:center}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:var(--cream);margin-bottom:16px;line-height:1.2;text-align:center}
-.section-title em{font-style:italic;color:var(--gold)}
-.couple-wrap{display:flex;flex-direction:column;gap:10px;width:100%;position:relative;z-index:2}
-.person-card{background:rgba(61,0,53,.3);border:1px solid rgba(201,162,39,.15);padding:14px 18px;display:flex;align-items:center;gap:14px}
-.person-photo{width:68px;height:68px;flex-shrink:0;border-radius:50%;border:1.5px solid var(--gold);overflow:hidden;background:var(--plum);display:flex;align-items:center;justify-content:center;font-size:24px}
-.person-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.person-info{text-align:left}
-.person-name{font-family:'Pinyon Script',cursive;font-size:30px;color:var(--cream);line-height:1.1}
-.person-parents{font-size:11px;line-height:1.7;color:rgba(255,248,231,.5)}
-.person-parents strong{color:rgba(255,248,231,.8);font-weight:500}
-.couple-amp{font-family:'Pinyon Script',cursive;font-size:44px;color:var(--gold);text-align:center;line-height:1;position:relative;z-index:2}
-
-/* ── S5 ── */
-#s5{background:linear-gradient(180deg,#0a0a0a 0%,#120010 100%);gap:16px}
-.event-card{background:rgba(10,10,10,.9);border:1px solid rgba(201,162,39,.25);padding:20px 24px;text-align:center;width:100%;position:relative;overflow:hidden}
-.event-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--crimson))}
-.event-icon{font-size:22px;margin-bottom:8px}
-.event-type{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
-.event-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--cream);margin-bottom:8px}
-.event-detail{font-size:12px;line-height:1.8;color:rgba(255,248,231,.55)}
-.event-detail strong{color:var(--cream);font-weight:500;display:block}
-.countdown{display:flex;justify-content:center;gap:0;width:100%}
-.count-item{text-align:center;flex:1;padding:12px 6px;border:1px solid rgba(201,162,39,.2)}
-.count-item+.count-item{border-left:none}
-.count-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--gold);line-height:1;display:block}
-.count-label{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,248,231,.35);margin-top:5px;display:block}
-
-/* ── S6 ── */
-#s6{background:var(--black);gap:0;padding:24px 0 16px}
-#s6::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(139,0,40,.2) 0%,transparent 60%)}
-.gallery-header{
-    text-align:center;
-    padding:0 24px;
-    margin-bottom:32px;
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:3px;
-    width:92%;
-    margin:0 auto;
+/* ── Variables ── */
+:root {
+  --crimson : #8B0028;
+  --gold    : #C9A227;
+  --black   : #0A0A0A;
+  --cream   : #FFF8E7;
+  --plum    : #3D0035;
 }
 
-.g-item{
-    aspect-ratio:1/1;
-    overflow:hidden;
+/* ── Base ── */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--black);
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--cream);
+}
+
+/* ── Slider ── */
+#slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#track {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+
+/* ── Slides ── */
+.slide {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 28px 24px;
+}
+
+/* ── Dots Navigation ── */
+#dots {
+  position: fixed;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  z-index: 100;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(201, 162, 39, 0.25);
+  border: 1px solid rgba(201, 162, 39, 0.5);
+  cursor: pointer;
+  transition: all 0.35s;
+}
+
+.dot.active {
+  background: var(--gold);
+  height: 18px;
+  border-radius: 3px;
+}
+
+/* ── Petals ── */
+.petal {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  animation: petalFall linear infinite;
+}
+
+@keyframes petalFall {
+  0%   { transform: translateY(-20px) rotate(0deg);   opacity: .7; }
+  100% { transform: translateY(105vh) rotate(400deg); opacity: 0;  }
+}
+
+/* ════════════════════════════
+   S1 — Buka Undangan
+════════════════════════════ */
+#s1 {
+  background: linear-gradient(160deg, #1a0015 0%, var(--plum) 50%, #1a0010 100%);
+}
+
+#s1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(139, 0, 40, .25) 0%, transparent 65%);
+}
+
+.env-icon {
+  width: 80px;
+  height: 58px;
+  margin-bottom: 28px;
+  animation: floatY 2.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-9px); }
+}
+
+.env-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 26px;
+  color: var(--cream);
+  opacity: .75;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.open-btn {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding: 15px 48px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color .35s;
+}
+
+.open-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateX(-101%);
+  transition: transform .35s ease;
+  z-index: -1;
+}
+
+.open-btn:active::after,
+.open-btn:hover::after  { transform: translateX(0); }
+
+.open-btn:active,
+.open-btn:hover  { color: var(--black); }
+
+.rose-corner {
+  position: absolute;
+  pointer-events: none;
+  opacity: .15;
+}
+
+/* ════════════════════════════
+   S2 — Hero
+════════════════════════════ */
+#s2 {
+  background: var(--black);
+  text-align: center;
+}
+
+#s2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(61, 0, 53, .5) 0%, transparent 70%);
+}
+
+.hero-floral     { position: absolute; width: 100%; pointer-events: none; opacity: .18; }
+.hero-floral.top { top: 0; }
+.hero-floral.bot { bottom: 0; transform: scaleY(-1); }
+
+.bismillah {
+  font-family: 'EB Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+.inv-label {
+  font-size: 9px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(255, 248, 231, .4);
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.gold-bar {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  margin: 0 auto 14px;
+}
+
+.hero-groom,
+.hero-bride {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(50px, 12vw, 72px);
+  line-height: 1.05;
+  display: block;
+  color: var(--cream);
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 40px rgba(201, 162, 39, .25);
+}
+
+.hero-amp {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(28px, 7vw, 40px);
+  color: var(--gold);
+  display: block;
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-divider      { display: flex; align-items: center; gap: 12px; justify-content: center; margin: 12px 0; }
+.hero-divider span { width: 36px; height: 1px; background: rgba(201, 162, 39, .4); }
+
+.hero-date {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  position: relative;
+  z-index: 2;
+}
+
+.swipe-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: .35; }
+  50%       { opacity: .9;  }
+}
+
+.swipe-hint span {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ════════════════════════════
+   S3 — Quran Quote
+════════════════════════════ */
+#s3 {
+  background: linear-gradient(160deg, #0a0a0a 0%, #1a0015 100%);
+}
+
+.quote-wrap {
+  background: linear-gradient(135deg, rgba(61, 0, 53, .7), rgba(139, 0, 40, .25));
+  border: 1px solid rgba(201, 162, 39, .2);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.quote-wrap::before {
+  content: '❝';
+  position: absolute;
+  top: 6px;
+  left: 14px;
+  font-size: 56px;
+  color: var(--gold);
+  opacity: .1;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.q-arabic {
+  font-family: 'EB Garamond', serif;
+  font-size: 17px;
+  line-height: 2.1;
+  color: var(--gold);
+  direction: rtl;
+  margin-bottom: 18px;
+}
+
+.q-trans {
+  font-family: 'EB Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.85;
+  color: rgba(255, 248, 231, .65);
+}
+
+.q-src {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .6;
+  margin-top: 14px;
+}
+
+/* ════════════════════════════
+   S4 — Mempelai
+════════════════════════════ */
+#s4 { background: var(--black); }
+
+#s4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(61, 0, 53, .4) 0%, transparent 70%);
+}
+
+.section-tag {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .7;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.couple-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.person-card {
+  background: rgba(61, 0, 53, .3);
+  border: 1px solid rgba(201, 162, 39, .15);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.person-photo {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  overflow: hidden;
+  background: var(--plum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.person-info { text-align: left; }
+
+.person-name {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 30px;
+  color: var(--cream);
+  line-height: 1.1;
+}
+
+.person-parents {
+  font-size: 11px;
+  line-height: 1.7;
+  color: rgba(255, 248, 231, .5);
+}
+
+.person-parents strong {
+  color: rgba(255, 248, 231, .8);
+  font-weight: 500;
+}
+
+.couple-amp {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 44px;
+  color: var(--gold);
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* ════════════════════════════
+   S5 — Acara & Countdown
+════════════════════════════ */
+#s5 {
+  background: linear-gradient(180deg, #0a0a0a 0%, #120010 100%);
+  gap: 16px;
+}
+
+.event-card {
+  background: rgba(10, 10, 10, .9);
+  border: 1px solid rgba(201, 162, 39, .25);
+  padding: 20px 24px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--crimson), var(--gold), var(--crimson));
+}
+
+.event-icon  { font-size: 22px; margin-bottom: 8px; }
+
+.event-type {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+
+.event-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+
+.event-detail        { font-size: 12px; line-height: 1.8; color: rgba(255, 248, 231, .55); }
+.event-detail strong { color: var(--cream); font-weight: 500; display: block; }
+
+.countdown { display: flex; justify-content: center; gap: 0; width: 100%; }
+
+.count-item {
+  text-align: center;
+  flex: 1;
+  padding: 12px 6px;
+  border: 1px solid rgba(201, 162, 39, .2);
+}
+
+.count-item + .count-item { border-left: none; }
+
+.count-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+
+.count-label {
+  font-size: 7px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 248, 231, .35);
+  margin-top: 5px;
+  display: block;
+}
+
+/* ════════════════════════════
+   S6 — Galeri
+════════════════════════════ */
+#s6 {
+  background: var(--black);
+  gap: 0;
+  padding: 24px 0 16px;
+}
+
+#s6::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(139, 0, 40, .2) 0%, transparent 60%);
+}
+
+.gallery-header {
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.g-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 .g-item img,
-.g-item video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+.g-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.g-item:active img{transform:scale(1.05)}
-.g-item.video-cell{background:#0a0a0a}
-.g-item.video-cell video{width:100%;height:100%;object-fit:cover}
-.g-item.video-cell .play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);transition:opacity .3s}
-.g-item.video-cell .play-overlay svg{filter:drop-shadow(0 0 6px rgba(201,162,39,.8))}
-.g-item.video-cell.playing .play-overlay{opacity:0}
-.footer-script{font-family:'Pinyon Script',cursive;font-size:36px;color:var(--cream);line-height:1;text-align:center;position:relative;z-index:2;margin-top:32px}
-.footer-script span{color:var(--gold)}
-.footer-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,248,231,.25);text-align:center;margin-top:2px;position:relative;z-index:2}
-/* ── Audio Player ── */
-#audio-btn{position:fixed;bottom:24px;left:20px;z-index:200;width:42px;height:42px;border-radius:50%;background:rgba(61,0,53,.85);border:1.5px solid rgba(201,162,39,.5);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;backdrop-filter:blur(8px)}
-#audio-btn:hover{border-color:var(--gold);background:rgba(61,0,53,1)}
-#audio-btn.playing{border-color:var(--gold);box-shadow:0 0 12px rgba(201,162,39,.3)}
-#audio-btn.playing::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(201,162,39,.25);animation:ripple 1.8s ease-out infinite}
-@keyframes ripple{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+.g-item:active img              { transform: scale(1.05); }
+.g-item.video-cell              { background: #0a0a0a; }
+.g-item.video-cell video        { width: 100%; height: 100%; object-fit: cover; }
 
-/* ── S7 Hadiah ── */
-#s7{background:linear-gradient(160deg,#0a0a0a 0%,#1a0015 100%)}
-.gift-card{background:rgba(61,0,53,.35);border:1px solid rgba(201,162,39,.2);padding:22px 20px;width:100%;margin-bottom:12px;position:relative;overflow:hidden}
-.gift-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--crimson),var(--gold))}
-.gift-icon{font-size:22px;margin-bottom:10px;text-align:center}
-.gift-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;text-align:center}
-.gift-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--cream);text-align:center;margin-bottom:6px}
-.gift-detail{font-size:13px;line-height:1.8;color:rgba(255,248,231,.6);text-align:center}
-.gift-detail strong{color:var(--cream);font-weight:500;display:block;font-size:15px;margin:4px 0}
-.copy-btn{display:inline-flex;align-items:center;gap:7px;margin-top:10px;background:transparent;border:1px solid rgba(201,162,39,.3);color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;cursor:pointer;transition:all .3s;width:100%;justify-content:center}
-.copy-btn:active,.copy-btn:hover{background:var(--gold);color:var(--black)}
-.copy-toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:10px 24px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999}
-.copy-toast.show{opacity:1}
+.g-item.video-cell .play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .3);
+  transition: opacity .3s;
+}
 
-/* ── S8 Ucapan ── */
-#s8{background:linear-gradient(160deg,#0a0a0a 0%,#1a0015 100%);justify-content:flex-start;padding-top:48px}
-.wish-form{width:100%;margin-bottom:16px;display:flex;flex-direction:column;gap:8px}
-.wish-form input,.wish-form textarea{
-  width:100%;background:rgba(255,248,231,.05);border:1px solid rgba(201,162,39,.25);
-  color:var(--cream);font-family:'EB Garamond',serif;font-size:14px;padding:11px 14px;outline:none;
-  transition:border-color .3s;
+.g-item.video-cell .play-overlay svg       { filter: drop-shadow(0 0 6px rgba(201, 162, 39, .8)); }
+.g-item.video-cell.playing .play-overlay   { opacity: 0; }
+
+.footer-script {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 36px;
+  color: var(--cream);
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-top: 32px;
 }
-.wish-form input:focus,.wish-form textarea:focus{border-color:var(--gold)}
-.wish-form input::placeholder,.wish-form textarea::placeholder{color:rgba(255,248,231,.3)}
-.wish-form textarea{resize:none;min-height:64px;font-family:'EB Garamond',serif}
-.submit-wish-btn{
-  background:linear-gradient(135deg,var(--crimson),var(--plum));
-  border:1px solid var(--gold);color:var(--gold);
-  font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;
-  padding:12px;cursor:pointer;transition:all .3s;
+
+.footer-script span { color: var(--gold); }
+
+.footer-sub {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 248, 231, .25);
+  text-align: center;
+  margin-top: 2px;
+  position: relative;
+  z-index: 2;
 }
-.submit-wish-btn:active,.submit-wish-btn:hover{background:var(--gold);color:var(--black)}
-.wish-list{
-  width:100%;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px;
-  padding-right:2px;
+
+/* ════════════════════════════
+   Audio Player
+════════════════════════════ */
+#audio-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  z-index: 200;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(61, 0, 53, .85);
+  border: 1.5px solid rgba(201, 162, 39, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .3s;
+  backdrop-filter: blur(8px);
 }
-.wish-list::-webkit-scrollbar{width:3px}
-.wish-list::-webkit-scrollbar-thumb{background:rgba(201,162,39,.3)}
-.wish-empty{
-  text-align:center;font-size:12px;color:rgba(255,248,231,.3);
-  font-style:italic;margin-top:20px;
+
+#audio-btn:hover   { border-color: var(--gold); background: rgba(61, 0, 53, 1); }
+#audio-btn.playing { border-color: var(--gold); box-shadow: 0 0 12px rgba(201, 162, 39, .3); }
+
+#audio-btn.playing::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 162, 39, .25);
+  animation: ripple 1.8s ease-out infinite;
 }
-.wish-item{
-  background:rgba(61,0,53,.25);border:1px solid rgba(201,162,39,.12);
-  border-left:2px solid var(--gold);padding:10px 14px;
+
+@keyframes ripple {
+  0%   { transform: scale(1);   opacity: .6; }
+  100% { transform: scale(1.6); opacity: 0;  }
 }
-.wish-name{
-  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;
-  color:var(--gold);margin-bottom:3px;
+
+/* ════════════════════════════
+   S7 — Hadiah
+════════════════════════════ */
+#s7 {
+  background: linear-gradient(160deg, #0a0a0a 0%, #1a0015 100%);
 }
-.wish-text{font-size:12px;line-height:1.6;color:rgba(255,248,231,.7)}
-.wish-time{font-size:9px;color:rgba(255,248,231,.25);margin-top:5px;letter-spacing:.5px}
+
+.gift-card {
+  background: rgba(61, 0, 53, .35);
+  border: 1px solid rgba(201, 162, 39, .2);
+  padding: 22px 20px;
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--crimson), var(--gold));
+}
+
+.gift-icon  { font-size: 22px; margin-bottom: 10px; text-align: center; }
+
+.gift-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.gift-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--cream);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.gift-detail        { font-size: 13px; line-height: 1.8; color: rgba(255, 248, 231, .6); text-align: center; }
+.gift-detail strong { color: var(--cream); font-weight: 500; display: block; font-size: 15px; margin: 4px 0; }
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid rgba(201, 162, 39, .3);
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all .3s;
+  width: 100%;
+  justify-content: center;
+}
+
+.copy-btn:active,
+.copy-btn:hover { background: var(--gold); color: var(--black); }
+
+.copy-toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--black);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.copy-toast.show { opacity: 1; }
+
+/* ════════════════════════════
+   S8 — Ucapan
+════════════════════════════ */
+#s8 {
+  background: linear-gradient(160deg, #0a0a0a 0%, #1a0015 100%);
+  justify-content: flex-start;
+  padding-top: 48px;
+}
+
+.wish-form {
+  width: 100%;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wish-form input,
+.wish-form textarea {
+  width: 100%;
+  background: rgba(255, 248, 231, .05);
+  border: 1px solid rgba(201, 162, 39, .25);
+  color: var(--cream);
+  font-family: 'EB Garamond', serif;
+  font-size: 14px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color .3s;
+}
+
+.wish-form input:focus,
+.wish-form textarea:focus        { border-color: var(--gold); }
+
+.wish-form input::placeholder,
+.wish-form textarea::placeholder { color: rgba(255, 248, 231, .3); }
+
+.wish-form textarea {
+  resize: none;
+  min-height: 64px;
+  font-family: 'EB Garamond', serif;
+}
+
+.submit-wish-btn {
+  background: linear-gradient(135deg, var(--crimson), var(--plum));
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 12px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.submit-wish-btn:active,
+.submit-wish-btn:hover { background: var(--gold); color: var(--black); }
+
+.wish-list {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 2px;
+}
+
+.wish-list::-webkit-scrollbar       { width: 3px; }
+.wish-list::-webkit-scrollbar-thumb { background: rgba(201, 162, 39, .3); }
+
+.wish-empty {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 248, 231, .3);
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.wish-item {
+  background: rgba(61, 0, 53, .25);
+  border: 1px solid rgba(201, 162, 39, .12);
+  border-left: 2px solid var(--gold);
+  padding: 10px 14px;
+}
+
+.wish-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+
+.wish-text { font-size: 12px; line-height: 1.6; color: rgba(255, 248, 231, .7); }
+.wish-time { font-size: 9px; color: rgba(255, 248, 231, .25); margin-top: 5px; letter-spacing: .5px; }
 
 </style>
 </head>
@@ -268,8 +915,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--black);font-fa
       <path d="M89 64 L58 36" stroke="#C9A227" stroke-width="1" opacity=".5"/>
     </svg>
   </div>
-  <p class="env-title">Sebuah undangan istimewa<br>untukmu</p>
-  <button class="open-btn" onclick="openInvitation()">Buka Undangan</button>
+  <p class="env-title">Tentang Hari Istimewa Kami<br>Kami Sampaikan...</p>
+  <button class="open-btn" onclick="openInvitation()">Buka Isinya dong...</button>
 </div>
 
 <!-- S2: HERO -->
@@ -301,7 +948,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--black);font-fa
 
   <div style="position:relative;z-index:2;text-align:center">
     <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-    <p class="inv-label">Undangan Pernikahan</p>
+    <p class="inv-label">Kabar Bahagia Pernikahan Kami</p>
     <div class="gold-bar"></div>
     <span class="hero-groom">Januar Ramadhan Putra</span>
     <span class="hero-amp">&amp;</span>
@@ -311,7 +958,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--black);font-fa
       <svg width="10" height="10" viewBox="0 0 12 12"><path d="M6 0l1.5 4.5H12L8.25 7.25 9.75 12 6 9.25 2.25 12l1.5-4.75L0 4.5h4.5z" fill="#C9A227" opacity=".7"/></svg>
       <span></span>
     </div>
-    <p class="hero-date">Senin, 28 Juli 2026</p>
+    <p class="hero-date">Selasa, 28 Juli 2026</p>
   </div>
 
   <svg class="hero-floral bot" viewBox="0 0 400 110" fill="none">
@@ -367,25 +1014,25 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--black);font-fa
 <div class="slide" id="s4">
   <div style="position:relative;z-index:2;width:100%">
     <p class="section-tag">Mempelai</p>
-    <h2 class="section-title">Dengan penuh syukur <em>kepada Allah SWT</em></h2>
+    <h2 class="section-title"><em>Atas izin Allah SWT,</em> Perkenankan kami memperkenalkan kedua mempelai. </h2>
     <div class="couple-wrap">
       <div class="person-card">
         <div class="person-photo">
-          <img src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Foto%20-%20Janu.jpg" alt="Januar Ramadhan Putra">
+          <img src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Janu.jpeg" alt="Januar Ramadhan Putra">
         </div>
         <div class="person-info">
           <p class="person-name">Januar Ramadhan Putra</p>
-          <p class="person-parents">Putra dari<br><strong>Bpk. Teguh Aribowo</strong> &amp; <strong>Ibu Juniwati Noerseha</strong></p>
+          <p class="person-parents">Putra dari<br><strong>Bpk. Teguh</strong> &amp; <strong>Ibu Yuni</strong></p>
         </div>
       </div>
       <p class="couple-amp">&amp;</p>
       <div class="person-card">
         <div class="person-photo">
-          <img src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Foto%20-%20Nilam.jpg" alt="Chomia Nilam Safitri">
+          <img src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Nilam.jpeg" alt="Chomia Nilam Safitri">
         </div>
         <div class="person-info">
           <p class="person-name">Chomia Nilam Safitri</p>
-          <p class="person-parents">Putri dari<br><strong>Bpk. Mustari</strong> &amp; <strong>Ibu Siti Chotidjah</strong></p>
+          <p class="person-parents">Putri dari<br><strong>Bpk. Mustari</strong> &amp; <strong>Ibu Siti</strong></p>
         </div>
       </div>
     </div>
