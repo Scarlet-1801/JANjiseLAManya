@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Hari Istimewa Kami 💕 — Januar & Chomia</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 <style>
 /* ── Reset ── */
 *,
@@ -18,11 +20,13 @@
 
 /* ── Variables ── */
 :root {
-  --crimson : #8B0028;
-  --gold    : #C9A227;
-  --black   : #0A0A0A;
-  --cream   : #FFF8E7;
-  --plum    : #3D0035;
+  --color1    : #3d102a;
+  --color2    : #C4973A;
+  --color3    : #1C1008;
+  --color4    : #F5ECD7;
+  --color5    : #7B2D42;
+  --color6    : #6B7A3A;
+  --color7    : #5C3A1E;
 }
 
 /* ── Base ── */
@@ -30,9 +34,9 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: var(--black);
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--cream);
+  background: var(--color3);
+  font-family: 'Playfair Display', serif;
+  color: var(--color4);
 }
 
 /* ── Slider ── */
@@ -88,7 +92,7 @@ html, body {
 }
 
 .dot.active {
-  background: var(--gold);
+  background: var(--color2);
   height: 18px;
   border-radius: 3px;
 }
@@ -113,7 +117,7 @@ html, body {
    S1 — Buka Undangan
 ════════════════════════════ */
 #s1 {
-  background: linear-gradient(160deg, #1a0015 0%, var(--plum) 50%, #1a0010 100%);
+  background: linear-gradient(160deg, #1a0c05 0%, var(--color5) 50%, #160a04 100%);
 }
 
 #s1::before {
@@ -138,9 +142,9 @@ html, body {
 }
 
 .env-title {
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 26px;
-  color: var(--cream);
+  color: var(--color4);
   opacity: .75;
   margin-bottom: 36px;
   position: relative;
@@ -153,9 +157,9 @@ html, body {
   position: relative;
   z-index: 2;
   background: transparent;
-  border: 1.5px solid var(--gold);
-  color: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
+  border: 1.5px solid var(--color2);
+  color: var(--color2);
+  font-family: 'Playfair Display', serif;
   font-size: 12px;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -169,7 +173,7 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--gold);
+  background: var(--color2);
   transform: translateX(-101%);
   transition: transform .35s ease;
   z-index: -1;
@@ -179,7 +183,7 @@ html, body {
 .open-btn:hover::after  { transform: translateX(0); }
 
 .open-btn:active,
-.open-btn:hover  { color: var(--black); }
+.open-btn:hover  { color: var(--color3); }
 
 .rose-corner {
   position: absolute;
@@ -191,7 +195,7 @@ html, body {
    S2 — Hero
 ════════════════════════════ */
 #s2 {
-  background: var(--black);
+  background: var(--color3);
   text-align: center;
 }
 
@@ -207,10 +211,10 @@ html, body {
 .hero-floral.bot { bottom: 0; transform: scaleY(-1); }
 
 .bismillah {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 14px;
   letter-spacing: 2px;
-  color: var(--gold);
+  color: var(--color2);
   margin-bottom: 5px;
   position: relative;
   z-index: 2;
@@ -226,29 +230,39 @@ html, body {
   z-index: 2;
 }
 
-.gold-bar {
+.color2-bar {
   width: 1px;
   height: 36px;
-  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  background: linear-gradient(to bottom, transparent, var(--color2), transparent);
   margin: 0 auto 14px;
 }
 
 .hero-groom,
 .hero-bride {
-  font-family: 'Pinyon Script', cursive;
-  font-size: clamp(50px, 12vw, 72px);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(50px, 10vw, 60px);
   line-height: 1.05;
   display: block;
-  color: var(--cream);
+  color: var(--color4);
   position: relative;
   z-index: 2;
   text-shadow: 0 0 40px rgba(201, 162, 39, .25);
 }
 
+.hero-groom em {
+  font-style: italic;
+  color: var(--color2);
+}
+
+.hero-bride em {
+  font-style: italic;
+  color: var(--color2);
+}
+
 .hero-amp {
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: clamp(28px, 7vw, 40px);
-  color: var(--gold);
+  color: var(--color2);
   display: block;
   line-height: 1.2;
   position: relative;
@@ -262,7 +276,7 @@ html, body {
   font-size: 10px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--color2);
   position: relative;
   z-index: 2;
 }
@@ -289,14 +303,14 @@ html, body {
   font-size: 8px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--color2);
 }
 
 /* ════════════════════════════
    S3 — Quran Quote
 ════════════════════════════ */
 #s3 {
-  background: linear-gradient(160deg, #0a0a0a 0%, #1a0015 100%);
+  background: linear-gradient(160deg, #1c1008 0%, #1a0c05 100%);
 }
 
 .quote-wrap {
@@ -315,34 +329,34 @@ html, body {
   top: 6px;
   left: 14px;
   font-size: 56px;
-  color: var(--gold);
+  color: var(--color2);
   opacity: .1;
   font-family: Georgia, serif;
   line-height: 1;
 }
 
 .q-arabic {
-  font-family: 'EB Garamond', serif;
-  font-size: 17px;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
   line-height: 2.1;
-  color: var(--gold);
+  color: var(--color2);
   direction: rtl;
   margin-bottom: 18px;
 }
 
 .q-trans {
-  font-family: 'EB Garamond', serif;
-  font-size: 13px;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
   font-style: italic;
   line-height: 1.85;
   color: rgba(255, 248, 231, .65);
 }
 
 .q-src {
-  font-size: 9px;
-  letter-spacing: 3px;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--color2);
   opacity: .6;
   margin-top: 14px;
 }
@@ -350,7 +364,7 @@ html, body {
 /* ════════════════════════════
    S4 — Mempelai
 ════════════════════════════ */
-#s4 { background: var(--black); }
+#s4 { background: var(--color3); }
 
 #s4::before {
   content: '';
@@ -363,17 +377,17 @@ html, body {
   font-size: 9px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--color2);
   opacity: .7;
   margin-bottom: 6px;
   text-align: center;
 }
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 19px;
   font-weight: 300;
-  color: var(--cream);
+  color: var(--color4);
   margin-bottom: 16px;
   line-height: 1.2;
   text-align: center;
@@ -381,13 +395,13 @@ html, body {
 
 .section-title em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--color2);
 }
 
 .couple-wrap {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -407,9 +421,9 @@ html, body {
   height: 68px;
   flex-shrink: 0;
   border-radius: 50%;
-  border: 1.5px solid var(--gold);
+  border: 1.5px solid var(--color2);
   overflow: hidden;
-  background: var(--plum);
+  background: var(--color5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -426,10 +440,16 @@ html, body {
 .person-info { text-align: left; }
 
 .person-name {
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
   font-size: 30px;
-  color: var(--cream);
+  color: var(--color4);
   line-height: 1.1;
+}
+
+.person-name em {
+  font-style: italic;
+  color: var(--color2);
 }
 
 .person-parents {
@@ -444,9 +464,9 @@ html, body {
 }
 
 .couple-amp {
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Playfair Display  ', serif;
   font-size: 44px;
-  color: var(--gold);
+  color: var(--color2);
   text-align: center;
   line-height: 1;
   position: relative;
@@ -457,7 +477,7 @@ html, body {
    S5 — Acara & Countdown
 ════════════════════════════ */
 #s5 {
-  background: linear-gradient(180deg, #0a0a0a 0%, #120010 100%);
+  background: linear-gradient(180deg, #1c1008 0%, #120a02 100%);
   gap: 16px;
 }
 
@@ -478,7 +498,7 @@ html, body {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--crimson), var(--gold), var(--crimson));
+  background: linear-gradient(90deg, var(--color1), var(--color2), var(--color1));
 }
 
 .event-icon  { font-size: 22px; margin-bottom: 8px; }
@@ -487,20 +507,20 @@ html, body {
   font-size: 9px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--color2);
   margin-bottom: 5px;
 }
 
 .event-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
   font-weight: 300;
-  color: var(--cream);
+  color: var(--color4);
   margin-bottom: 8px;
 }
 
 .event-detail        { font-size: 12px; line-height: 1.8; color: rgba(255, 248, 231, .55); }
-.event-detail strong { color: var(--cream); font-weight: 500; display: block; }
+.event-detail strong { color: var(--color4); font-weight: 500; display: block; }
 
 .countdown { display: flex; justify-content: center; gap: 0; width: 100%; }
 
@@ -514,10 +534,10 @@ html, body {
 .count-item + .count-item { border-left: none; }
 
 .count-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 34px;
   font-weight: 300;
-  color: var(--gold);
+  color: var(--color2);
   line-height: 1;
   display: block;
 }
@@ -535,7 +555,7 @@ html, body {
    S6 — Galeri
 ════════════════════════════ */
 #s6 {
-  background: var(--black);
+  background: var(--color3);
   gap: 0;
   padding: 24px 0 16px;
 }
@@ -575,7 +595,7 @@ html, body {
 }
 
 .g-item:active img              { transform: scale(1.05); }
-.g-item.video-cell              { background: #0a0a0a; }
+.g-item.video-cell              { background: #1c1008; }
 .g-item.video-cell video        { width: 100%; height: 100%; object-fit: cover; }
 
 .g-item.video-cell .play-overlay {
@@ -592,9 +612,9 @@ html, body {
 .g-item.video-cell.playing .play-overlay   { opacity: 0; }
 
 .footer-script {
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Playfair Display', cursive;
   font-size: 36px;
-  color: var(--cream);
+  color: var(--color4);
   line-height: 1;
   text-align: center;
   position: relative;
@@ -602,7 +622,7 @@ html, body {
   margin-top: 32px;
 }
 
-.footer-script span { color: var(--gold); }
+.footer-script span { color: var(--color2); }
 
 .footer-sub {
   font-size: 9px;
@@ -636,8 +656,8 @@ html, body {
   backdrop-filter: blur(8px);
 }
 
-#audio-btn:hover   { border-color: var(--gold); background: rgba(61, 0, 53, 1); }
-#audio-btn.playing { border-color: var(--gold); box-shadow: 0 0 12px rgba(201, 162, 39, .3); }
+#audio-btn:hover   { border-color: var(--color2); background: rgba(61, 0, 53, 1); }
+#audio-btn.playing { border-color: var(--color2); box-shadow: 0 0 12px rgba(201, 162, 39, .3); }
 
 #audio-btn.playing::after {
   content: "";
@@ -657,7 +677,7 @@ html, body {
    S7 — Hadiah
 ════════════════════════════ */
 #s7 {
-  background: linear-gradient(160deg, #0a0a0a 0%, #1a0015 100%);
+  background: linear-gradient(160deg, #1c1008 0%, #1a0c05 100%);
 }
 
 .gift-card {
@@ -677,7 +697,7 @@ html, body {
   left: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--crimson), var(--gold));
+  background: linear-gradient(to bottom, var(--color1), var(--color2));
 }
 
 .gift-icon  { font-size: 22px; margin-bottom: 10px; text-align: center; }
@@ -686,22 +706,22 @@ html, body {
   font-size: 9px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--color2);
   margin-bottom: 8px;
   text-align: center;
 }
 
 .gift-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
   font-weight: 300;
-  color: var(--cream);
+  color: var(--color4);
   text-align: center;
   margin-bottom: 6px;
 }
 
 .gift-detail        { font-size: 13px; line-height: 1.8; color: rgba(255, 248, 231, .6); text-align: center; }
-.gift-detail strong { color: var(--cream); font-weight: 500; display: block; font-size: 15px; margin: 4px 0; }
+.gift-detail strong { color: var(--color4); font-weight: 500; display: block; font-size: 15px; margin: 4px 0; }
 
 .copy-btn {
   display: inline-flex;
@@ -710,8 +730,8 @@ html, body {
   margin-top: 10px;
   background: transparent;
   border: 1px solid rgba(201, 162, 39, .3);
-  color: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
+  color: var(--color2);
+  font-family: 'Playfair Display', serif;
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -723,15 +743,15 @@ html, body {
 }
 
 .copy-btn:active,
-.copy-btn:hover { background: var(--gold); color: var(--black); }
+.copy-btn:hover { background: var(--color2); color: var(--color3); }
 
 .copy-toast {
   position: fixed;
   bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--gold);
-  color: var(--black);
+  background: var(--color2);
+  color: var(--color3);
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -748,7 +768,7 @@ html, body {
    S8 — Ucapan
 ════════════════════════════ */
 #s8 {
-  background: linear-gradient(160deg, #0a0a0a 0%, #1a0015 100%);
+  background: linear-gradient(160deg, #1c1008 0%, #1a0c05 100%);
   justify-content: flex-start;
   padding-top: 48px;
 }
@@ -766,8 +786,8 @@ html, body {
   width: 100%;
   background: rgba(255, 248, 231, .05);
   border: 1px solid rgba(201, 162, 39, .25);
-  color: var(--cream);
-  font-family: 'EB Garamond', serif;
+  color: var(--color4);
+  font-family: 'Playfair Display', serif;
   font-size: 14px;
   padding: 11px 14px;
   outline: none;
@@ -775,7 +795,7 @@ html, body {
 }
 
 .wish-form input:focus,
-.wish-form textarea:focus        { border-color: var(--gold); }
+.wish-form textarea:focus        { border-color: var(--color2); }
 
 .wish-form input::placeholder,
 .wish-form textarea::placeholder { color: rgba(255, 248, 231, .3); }
@@ -783,14 +803,14 @@ html, body {
 .wish-form textarea {
   resize: none;
   min-height: 64px;
-  font-family: 'EB Garamond', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .submit-wish-btn {
-  background: linear-gradient(135deg, var(--crimson), var(--plum));
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
+  background: linear-gradient(135deg, var(--color1), var(--color5));
+  border: 1px solid var(--color2);
+  color: var(--color2);
+  font-family: 'Playfair Display', serif;
   font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -800,7 +820,7 @@ html, body {
 }
 
 .submit-wish-btn:active,
-.submit-wish-btn:hover { background: var(--gold); color: var(--black); }
+.submit-wish-btn:hover { background: var(--color2); color: var(--color3); }
 
 .wish-list {
   width: 100%;
@@ -826,15 +846,15 @@ html, body {
 .wish-item {
   background: rgba(61, 0, 53, .25);
   border: 1px solid rgba(201, 162, 39, .12);
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--color2);
   padding: 10px 14px;
 }
 
 .wish-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 14px;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--color2);
   margin-bottom: 3px;
 }
 
@@ -849,8 +869,8 @@ html, body {
   <source src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Sweet_Nothing.mp3" type="audio/mpeg">
 </audio>
 <button id="audio-btn" onclick="toggleAudio()" title="Putar / Pause musik">
-  <svg id="ic-play" width="16" height="16" viewBox="0 0 24 24" fill="#C9A227"><path d="M8 5v14l11-7z"/></svg>
-  <svg id="ic-pause" width="16" height="16" viewBox="0 0 24 24" fill="#C9A227" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+  <svg id="ic-play" width="16" height="16" viewBox="0 0 24 24" fill="#C4973A"><path d="M8 5v14l11-7z"/></svg>
+  <svg id="ic-pause" width="16" height="16" viewBox="0 0 24 24" fill="#C4973A" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
 </button>
 <div id="dots">
   <div class="dot active" onclick="goTo(0)"></div>
@@ -871,91 +891,93 @@ html, body {
 <div class="slide" id="s1">
   <svg class="rose-corner" style="top:-15px;left:-15px;width:170px;transform:rotate(-10deg)" viewBox="0 0 200 200" fill="none">
     <g transform="translate(100,100)">
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(0)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(45)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(90)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(135)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(180)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(225)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(270)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(315)"/>
-      <circle cx="0" cy="0" r="18" fill="#8B0028"/>
-      <circle cx="0" cy="0" r="9" fill="#C9A227"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(315)"/>
+      <circle cx="0" cy="0" r="18" fill="#7B2D42"/>
+      <circle cx="0" cy="0" r="9" fill="#C4973A"/>
     </g>
-    <path d="M100,100 C65,82 25,88 -10,65" stroke="#3D0035" stroke-width="2.5" fill="none"/>
-    <path d="M100,100 C82,65 88,25 65,-10" stroke="#3D0035" stroke-width="2.5" fill="none"/>
-    <ellipse cx="38" cy="78" rx="14" ry="7" fill="#3D0035" opacity=".8" transform="rotate(-30,38,78)"/>
-    <ellipse cx="78" cy="38" rx="14" ry="7" fill="#3D0035" opacity=".8" transform="rotate(-60,78,38)"/>
-    <circle cx="-10" cy="65" r="9" fill="#8B0028" opacity=".6"/>
-    <circle cx="65" cy="-10" r="7" fill="#8B0028" opacity=".5"/>
+    <path d="M100,100 C65,82 25,88 -10,65" stroke="#3D2010" stroke-width="2.5" fill="none"/>
+    <path d="M100,100 C82,65 88,25 65,-10" stroke="#3D2010" stroke-width="2.5" fill="none"/>
+    <ellipse cx="38" cy="78" rx="14" ry="7" fill="#3D2010" opacity=".8" transform="rotate(-30,38,78)"/>
+    <ellipse cx="78" cy="38" rx="14" ry="7" fill="#3D2010" opacity=".8" transform="rotate(-60,78,38)"/>
+    <circle cx="-10" cy="65" r="9" fill="#7B2D42" opacity=".6"/>
+    <circle cx="65" cy="-10" r="7" fill="#7B2D42" opacity=".5"/>
   </svg>
   <svg class="rose-corner" style="bottom:-15px;right:-15px;width:170px;transform:rotate(170deg)" viewBox="0 0 200 200" fill="none">
     <g transform="translate(100,100)">
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(0)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(45)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(90)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(135)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(180)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(225)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(270)"/>
-      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#8B0028" transform="rotate(315)"/>
-      <circle cx="0" cy="0" r="18" fill="#8B0028"/>
-      <circle cx="0" cy="0" r="9" fill="#C9A227"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-34" rx="11" ry="19" fill="#7B2D42" transform="rotate(315)"/>
+      <circle cx="0" cy="0" r="18" fill="#7B2D42"/>
+      <circle cx="0" cy="0" r="9" fill="#C4973A"/>
     </g>
-    <path d="M100,100 C135,118 175,112 210,135" stroke="#3D0035" stroke-width="2.5" fill="none"/>
-    <path d="M100,100 C118,135 112,175 135,210" stroke="#3D0035" stroke-width="2.5" fill="none"/>
-    <ellipse cx="162" cy="122" rx="14" ry="7" fill="#3D0035" opacity=".8" transform="rotate(30,162,122)"/>
-    <ellipse cx="122" cy="162" rx="14" ry="7" fill="#3D0035" opacity=".8" transform="rotate(60,122,162)"/>
+    <path d="M100,100 C135,118 175,112 210,135" stroke="#3D2010" stroke-width="2.5" fill="none"/>
+    <path d="M100,100 C118,135 112,175 135,210" stroke="#3D2010" stroke-width="2.5" fill="none"/>
+    <ellipse cx="162" cy="122" rx="14" ry="7" fill="#3D2010" opacity=".8" transform="rotate(30,162,122)"/>
+    <ellipse cx="122" cy="162" rx="14" ry="7" fill="#3D2010" opacity=".8" transform="rotate(60,122,162)"/>
   </svg>
   <div class="env-icon">
     <svg viewBox="0 0 90 65" fill="none">
-      <rect x="1" y="1" width="88" height="63" rx="3" stroke="#C9A227" stroke-width="1.5" fill="rgba(61,0,53,.6)"/>
-      <path d="M1 8 L45 38 L89 8" stroke="#C9A227" stroke-width="1.5" fill="none"/>
-      <path d="M1 64 L32 36" stroke="#C9A227" stroke-width="1" opacity=".5"/>
-      <path d="M89 64 L58 36" stroke="#C9A227" stroke-width="1" opacity=".5"/>
+      <rect x="1" y="1" width="88" height="63" rx="3" stroke="#C4973A" stroke-width="1.5" fill="rgba(61,32,16,.6)"/>
+      <path d="M1 8 L45 38 L89 8" stroke="#C4973A" stroke-width="1.5" fill="none"/>
+      <path d="M1 64 L32 36" stroke="#C4973A" stroke-width="1" opacity=".5"/>
+      <path d="M89 64 L58 36" stroke="#C4973A" stroke-width="1" opacity=".5"/>
     </svg>
   </div>
-  <p class="env-title">Tentang Hari Istimewa Kami<br>Kami Sampaikan...</p>
-  <button class="open-btn" onclick="openInvitation()">Buka Isinya dong...</button>
+  <p class="env-title">A Little Announcement:<br>We Are Getting Married!</p>
+  <button class="open-btn" onclick="openInvitation()">Kindly Open This</button>
 </div>
 
 <!-- S2: HERO -->
 <div class="slide" id="s2">
   <svg class="hero-floral top" viewBox="0 0 400 110" fill="none">
     <g transform="translate(200,68)">
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(0)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(45)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(90)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(135)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(180)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(225)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(270)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(315)"/>
-      <circle cx="0" cy="0" r="13" fill="#8B0028"/>
-      <circle cx="0" cy="0" r="6" fill="#C9A227"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(315)"/>
+      <circle cx="0" cy="0" r="13" fill="#7B2D42"/>
+      <circle cx="0" cy="0" r="6" fill="#C4973A"/>
     </g>
-    <path d="M200,68 C160,52 110,57 70,38" stroke="#3D0035" stroke-width="2" fill="none"/>
-    <path d="M200,68 C240,52 290,57 330,38" stroke="#3D0035" stroke-width="2" fill="none"/>
-    <circle cx="70" cy="38" r="7" fill="#8B0028" opacity=".65"/>
-    <circle cx="330" cy="38" r="7" fill="#8B0028" opacity=".65"/>
-    <ellipse cx="135" cy="50" rx="11" ry="5" fill="#3D0035" opacity=".75" transform="rotate(-18,135,50)"/>
-    <ellipse cx="265" cy="50" rx="11" ry="5" fill="#3D0035" opacity=".75" transform="rotate(18,265,50)"/>
-    <circle cx="25" cy="52" r="4" fill="#8B0028" opacity=".45"/>
-    <circle cx="375" cy="52" r="4" fill="#8B0028" opacity=".45"/>
-    <circle cx="155" cy="32" r="1.5" fill="#C9A227" opacity=".6"/>
-    <circle cx="245" cy="32" r="1.5" fill="#C9A227" opacity=".6"/>
+    <path d="M200,68 C160,52 110,57 70,38" stroke="#3D2010" stroke-width="2" fill="none"/>
+    <path d="M200,68 C240,52 290,57 330,38" stroke="#3D2010" stroke-width="2" fill="none"/>
+    <circle cx="70" cy="38" r="7" fill="#7B2D42" opacity=".65"/>
+    <circle cx="330" cy="38" r="7" fill="#7B2D42" opacity=".65"/>
+    <ellipse cx="135" cy="50" rx="11" ry="5" fill="#3D2010" opacity=".75" transform="rotate(-18,135,50)"/>
+    <ellipse cx="265" cy="50" rx="11" ry="5" fill="#3D2010" opacity=".75" transform="rotate(18,265,50)"/>
+    <circle cx="25" cy="52" r="4" fill="#7B2D42" opacity=".45"/>
+    <circle cx="375" cy="52" r="4" fill="#7B2D42" opacity=".45"/>
+    <circle cx="155" cy="32" r="1.5" fill="#C4973A" opacity=".6"/>
+    <circle cx="245" cy="32" r="1.5" fill="#C4973A" opacity=".6"/>
   </svg>
 
   <div style="position:relative;z-index:2;text-align:center">
     <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-    <p class="inv-label">Kabar Bahagia Pernikahan Kami</p>
-    <div class="gold-bar"></div>
-    <span class="hero-groom">Januar Ramadhan Putra</span>
-    <span class="hero-amp">&amp;</span>
-    <span class="hero-bride">Chomia Nilam Safitri</span>
+    <p class="inv-label">Our Joyful Event</p>
+    <div class="color2-bar"></div>
+    <span class="hero-groom"><em>Januar </em>Ramadhan Putra</span>
+    <br><br/>
+    <span class="hero-amp">&#10084</span>
+    <br><br/>
+    <span class="hero-bride">Chomia <em>Nilam</em> Safitri</span>
     <div class="hero-divider">
       <span></span>
-      <svg width="10" height="10" viewBox="0 0 12 12"><path d="M6 0l1.5 4.5H12L8.25 7.25 9.75 12 6 9.25 2.25 12l1.5-4.75L0 4.5h4.5z" fill="#C9A227" opacity=".7"/></svg>
+      <svg width="10" height="10" viewBox="0 0 12 12"><path d="M6 0l1.5 4.5H12L8.25 7.25 9.75 12 6 9.25 2.25 12l1.5-4.75L0 4.5h4.5z" fill="#C4973A" opacity=".7"/></svg>
       <span></span>
     </div>
     <p class="hero-date">Selasa, 28 Juli 2026</p>
@@ -963,25 +985,25 @@ html, body {
 
   <svg class="hero-floral bot" viewBox="0 0 400 110" fill="none">
     <g transform="translate(200,68)">
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(0)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(45)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(90)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(135)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(180)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(225)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(270)"/>
-      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#8B0028" transform="rotate(315)"/>
-      <circle cx="0" cy="0" r="13" fill="#8B0028"/>
-      <circle cx="0" cy="0" r="6" fill="#C9A227"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-26" rx="8" ry="15" fill="#7B2D42" transform="rotate(315)"/>
+      <circle cx="0" cy="0" r="13" fill="#7B2D42"/>
+      <circle cx="0" cy="0" r="6" fill="#C4973A"/>
     </g>
-    <path d="M200,68 C160,52 110,57 70,38" stroke="#3D0035" stroke-width="2" fill="none"/>
-    <path d="M200,68 C240,52 290,57 330,38" stroke="#3D0035" stroke-width="2" fill="none"/>
-    <circle cx="70" cy="38" r="7" fill="#8B0028" opacity=".65"/>
-    <circle cx="330" cy="38" r="7" fill="#8B0028" opacity=".65"/>
+    <path d="M200,68 C160,52 110,57 70,38" stroke="#3D2010" stroke-width="2" fill="none"/>
+    <path d="M200,68 C240,52 290,57 330,38" stroke="#3D2010" stroke-width="2" fill="none"/>
+    <circle cx="70" cy="38" r="7" fill="#7B2D42" opacity=".65"/>
+    <circle cx="330" cy="38" r="7" fill="#7B2D42" opacity=".65"/>
   </svg>
 
   <div class="swipe-hint">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4973A" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     <span>Geser ke bawah</span>
   </div>
 </div>
@@ -996,17 +1018,17 @@ html, body {
   </div>
   <svg style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:100px;opacity:.1;pointer-events:none" viewBox="0 0 120 50" fill="none">
     <g transform="translate(60,25)">
-      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#8B0028" transform="rotate(0)"/>
-      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#8B0028" transform="rotate(60)"/>
-      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#8B0028" transform="rotate(120)"/>
-      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#8B0028" transform="rotate(180)"/>
-      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#8B0028" transform="rotate(240)"/>
-      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#8B0028" transform="rotate(300)"/>
-      <circle cx="0" cy="0" r="7" fill="#8B0028"/>
-      <circle cx="0" cy="0" r="3" fill="#C9A227"/>
+      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#7B2D42" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#7B2D42" transform="rotate(60)"/>
+      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#7B2D42" transform="rotate(120)"/>
+      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#7B2D42" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#7B2D42" transform="rotate(240)"/>
+      <ellipse cx="0" cy="-13" rx="5" ry="8" fill="#7B2D42" transform="rotate(300)"/>
+      <circle cx="0" cy="0" r="7" fill="#7B2D42"/>
+      <circle cx="0" cy="0" r="3" fill="#C4973A"/>
     </g>
-    <path d="M60,25 C40,20 20,22 5,14" stroke="#3D0035" stroke-width="1.5" fill="none"/>
-    <path d="M60,25 C80,20 100,22 115,14" stroke="#3D0035" stroke-width="1.5" fill="none"/>
+    <path d="M60,25 C40,20 20,22 5,14" stroke="#3D2010" stroke-width="1.5" fill="none"/>
+    <path d="M60,25 C80,20 100,22 115,14" stroke="#3D2010" stroke-width="1.5" fill="none"/>
   </svg>
 </div>
 
@@ -1018,20 +1040,20 @@ html, body {
     <div class="couple-wrap">
       <div class="person-card">
         <div class="person-photo">
-          <img src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Janu.jpeg" alt="Januar Ramadhan Putra">
+          <img src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Janu.jpg" alt="Januar Ramadhan Putra">
         </div>
         <div class="person-info">
-          <p class="person-name">Januar Ramadhan Putra</p>
+          <p class="person-name"><em>Januar </em>Ramadhan Putra</p>
           <p class="person-parents">Putra dari<br><strong>Bpk. Teguh</strong> &amp; <strong>Ibu Yuni</strong></p>
         </div>
       </div>
       <p class="couple-amp">&amp;</p>
       <div class="person-card">
         <div class="person-photo">
-          <img src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Nilam.jpeg" alt="Chomia Nilam Safitri">
+          <img src="https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Nilam.jpg" alt="Chomia Nilam Safitri">
         </div>
         <div class="person-info">
-          <p class="person-name">Chomia Nilam Safitri</p>
+          <p class="person-name">Chomia <em>Nilam</em> Safitri</p>
           <p class="person-parents">Putri dari<br><strong>Bpk. Mustari</strong> &amp; <strong>Ibu Siti</strong></p>
         </div>
       </div>
@@ -1041,7 +1063,7 @@ html, body {
 
 <!-- S5: ACARA + COUNTDOWN -->
 <div class="slide" id="s5">
-  <p class="section-tag">Rangkaian Acara</p>
+  <p class="section-tag">Mohon doa terbaik untuk kami</p>
   <div class="event-card">
     <div class="event-icon">💍</div>
     <p class="event-type">Akad Nikah</p>
@@ -1097,7 +1119,7 @@ html, body {
     <p class="gift-label">Transfer Rekening</p>
     <p class="gift-name">Bank BCA</p>
     <p class="gift-detail">Atas Nama<strong>Januar Ramadhan Putra</strong>
-      <span style="font-size:20px;font-family:'Cormorant Garamond',serif;color:var(--gold);letter-spacing:3px">7625103762</span>
+      <span style="font-size:20px;font-family:'Cormorant Garamond',serif;color:var(--color2);letter-spacing:3px">7625103762</span>
     </p>
     <button class="copy-btn" onclick="copyText('7625103762')">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
@@ -1199,7 +1221,7 @@ setInterval(tick,1000);tick();
 
 // Petals
 function createPetals(){
-  const c=['#8B0028','#C9A227','#3D0035','#FFF8E7'];
+  const c=['#7B2D42','#C4973A','#3D2010','#F5ECD7'];
   for(let i=0;i<20;i++){
     setTimeout(()=>{
       const p=document.createElement('div');
@@ -1249,7 +1271,7 @@ function shuffleGallery() {
       const encodedVideo = 'https://raw.githubusercontent.com/Scarlet-1801/JANjiseLAManya/main/Video-Jani.mp4';
       cell.innerHTML = '<video id="galleryVideo" src="' + encodedVideo + '" playsinline loop muted autoplay></video>' +
         '<div class="play-overlay" onclick="toggleVideo(this)">' +
-        '<svg width="32" height="32" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="rgba(61,0,53,0.7)" stroke="#C9A227" stroke-width="1"/><path d="M10 8l6 4-6 4V8z" fill="#C9A227"/></svg></div>';
+        '<svg width="32" height="32" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="rgba(61,32,16,0.7)" stroke="#C4973A" stroke-width="1"/><path d="M10 8l6 4-6 4V8z" fill="#C4973A"/></svg></div>';
       // autoplay video when entering gallery
       setTimeout(()=>{
         const v=document.getElementById('galleryVideo');
